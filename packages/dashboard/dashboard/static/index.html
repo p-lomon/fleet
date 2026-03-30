@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚢 Fleet Dashboard</h1>
+            <div class="last-updated">Last updated: <span id="last-updated">-</span></div>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card pending">
+                <h3>Pending</h3>
+                <div class="stat-value" id="stat-pending">-</div>
+            </div>
+            <div class="stat-card processing">
+                <h3>Processing</h3>
+                <div class="stat-value" id="stat-processing">-</div>
+            </div>
+            <div class="stat-card completed">
+                <h3>Completed</h3>
+                <div class="stat-value" id="stat-completed">-</div>
+            </div>
+            <div class="stat-card failed">
+                <h3>Failed</h3>
+                <div class="stat-value" id="stat-failed">-</div>
+            </div>
+            <div class="stat-card total">
+                <h3>Total</h3>
+                <div class="stat-value" id="stat-total">-</div>
+            </div>
+        </section>
+
+        <section class="jobs-section">
+            <div class="jobs-header">
+                <h2>Jobs</h2>
+                <div class="filter-controls">
+                    <label for="status-filter">Status:</label>
+                    <select id="status-filter">
+                        <option value="">All</option>
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="completed">Completed</option>
+                        <option value="failed">Failed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="jobs-table-container">
+                <table class="jobs-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Template</th>
+                            <th>Status</th>
+                            <th>Created</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jobs-body">
+                        <tr><td colspan="5" class="loading">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div id="job-modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <h2 id="modal-title">Job Details</h2>
+                <div id="modal-body" class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
