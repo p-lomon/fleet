@@ -1,0 +1,15 @@
+[project]
+name = "fleet"
+version = "0.1.0"
+description = "Job queue system with templated job types"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.uv.workspace]
+members = ["packages/queue-core", "packages/host", "packages/worker"]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+]
