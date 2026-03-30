@@ -68,6 +68,29 @@ processor.run()  # Runs indefinitely
 uv run python examples/basic_usage.py
 ```
 
+## Dashboard
+
+Start the web dashboard to monitor jobs in real-time:
+
+```bash
+# Start with default queue directory
+uv run python dashboard-cli.py
+
+# Start with custom queue directory
+uv run python dashboard-cli.py /path/to/queue
+
+# Start on different host/port
+uv run python dashboard-cli.py --host 0.0.0.0 --port 8080
+```
+
+Then open http://127.0.0.1:8000 in your browser.
+
+The dashboard shows:
+- Real-time queue statistics (pending, processing, completed, failed)
+- List of all jobs with status filtering
+- Job details including payload and results
+- Auto-refresh every 3 seconds
+
 ## Architecture
 
 ### Host Environment
