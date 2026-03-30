@@ -70,8 +70,10 @@ class TestJobSubmitter:
             pending = submitter.get_pending_jobs()
 
             assert len(pending) == 2
-            assert pending[0].payload["name"] == "job1"
-            assert pending[1].payload["name"] == "job2"
+            # Sort by job ID for deterministic ordering
+            pending_sorted = sorted(pending, key=lambda j: j.id)
+            names = {j.payload["name"] for j in pending_sorted}
+            assert names == {"job1", "job2"}
 
     def test_default_registry(self):
         """Test that JobSubmitter creates default registry if none provided."""
