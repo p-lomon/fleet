@@ -11,8 +11,8 @@ members = ["packages/queue-core", "packages/host", "packages/worker"]
 [tool.uv.sources]
 queue-core = { workspace = true }
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
     "pytest>=8.0.0",
     "pytest-asyncio>=0.23.0",
 ]
