@@ -6,7 +6,7 @@ requires-python = ">=3.11"
 dependencies = []
 
 [tool.uv.workspace]
-members = ["packages/queue-core", "packages/host", "packages/worker"]
+members = ["packages/queue-core", "packages/host", "packages/worker", "packages/dashboard"]
 
 [tool.uv.sources]
 queue-core = { workspace = true }
