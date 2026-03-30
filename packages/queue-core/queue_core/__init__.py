@@ -1,12 +1,13 @@
 from queue_core.job import Job, JobStatus
 from queue_core.queue import FileQueue, Queue
-from queue_core.template import Template, TemplateRegistry
+from queue_core.template import Template, TemplateRegistry, PydanticValidator
 
 __all__ = [
     "Job",
-    "JobStatus", 
+    "JobStatus",
     "Queue",
     "FileQueue",
     "Template",
     "TemplateRegistry",
+    "PydanticValidator",
 ]
